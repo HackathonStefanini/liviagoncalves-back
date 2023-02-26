@@ -48,6 +48,6 @@ public class JogadorResource {
     @POST
     @Path("/login")
     public Response login(Jogador jogador) throws Exception {
-        return Response.status(Response.Status.OK).entity(jogadorService.login(jogador)).build();
+        return Response.status(Response.Status.OK).entity(jogadorService.login(jogador.getNickname(), jogador.getPassword())).build();
     }
 }

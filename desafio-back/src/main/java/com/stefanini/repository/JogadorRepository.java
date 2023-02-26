@@ -9,10 +9,10 @@ import javax.persistence.NoResultException;
 @ApplicationScoped
 public class JogadorRepository extends GenericDAO<Jogador, Long> {
 
-    public Jogador login(Jogador jogador) {
+    public Jogador login(String nickname, String password) {
         return createQuery("SELECT * FROM Jogador WHERE nickname =: nickname AND password =: password")
-                .setParameter("nickname", jogador.getNickname())
-                .setParameter("password", jogador.getPassword())
+                .setParameter("nickname", nickname)
+                .setParameter("password", password)
                 .getSingleResult();
     }
 

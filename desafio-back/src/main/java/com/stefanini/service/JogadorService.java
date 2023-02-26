@@ -2,6 +2,7 @@ package com.stefanini.service;
 
 import com.stefanini.entity.Jogador;
 import com.stefanini.exceptions.RegraDeNegocioException;
+import com.stefanini.parser.JogadorParser;
 import com.stefanini.repository.JogadorRepository;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -28,12 +29,12 @@ public class JogadorService {
         jogadorRepository.save(jogador);
     }
 
-    public Jogador login(Jogador jogador){
-        Jogador jog = jogadorRepository.login(jogador);
+    public Jogador login(String nickname, String password){
+        Jogador jogador = jogadorRepository.login(nickname, password);
         if (Objects.isNull(jogador)){
-            throw new RegraDeNegocioException("Erro na busca do jogardor " + jogador.getNickname(), Response.Status.NOT_FOUND);
+            throw new RegraDeNegocioException("Erro na busca do jogardor ", Response.Status.NOT_FOUND);
         }
-        return jog;
+        return jogador;
     }
 
     public Jogador pegarPorId(Long id) {
