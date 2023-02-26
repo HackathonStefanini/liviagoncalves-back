@@ -22,6 +22,15 @@ public class JogadorDTO {
         this.nickname = jogador.getNickname();
         this.password = jogador.getNickname();
         this.saldo = jogador.getSaldo();
+        this.stefamon = stefamon;
+    }
+
+    public JogadorDTO(Long id, String nickname, String password, BigDecimal saldo, List<Stefamon> stefamon) {
+        this.id = id;
+        this.nickname = nickname;
+        this.password = password;
+        this.saldo = saldo;
+        this.stefamon = stefamon;
     }
 
     public Long getId() {
@@ -54,5 +63,13 @@ public class JogadorDTO {
 
     public void setSaldo(BigDecimal saldo) {
         this.saldo = saldo;
+    }
+
+    public List<Stefamon> getStefamon() {
+        return stefamon;
+    }
+
+    public void setStefamon(List<Stefamon> stefamon) {
+        this.stefamon = stefamon;
     }
 }
