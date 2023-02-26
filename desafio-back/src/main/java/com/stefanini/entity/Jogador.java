@@ -9,7 +9,7 @@ import java.util.List;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 @Entity
-@Table(name = "tb_jogador")
+@Table(schema = "tb_jogador")
 public class Jogador {
 
     @Id
@@ -22,7 +22,7 @@ public class Jogador {
     private String nickname;
 
     @Column(nullable = false, length = 10)
-    @Size(min = 4, max = 10)
+    @Size(min = 4, max = 10, message = "A senha deve ter entre 4 e 10 caracteres")
     @NotBlank(message = "Não pode ser nulo")
     private String password;
 

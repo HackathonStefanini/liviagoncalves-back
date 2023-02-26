@@ -1,14 +1,18 @@
 package com.stefanini.dto;
 
 import com.stefanini.entity.Jogador;
+import com.stefanini.entity.Stefamon;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JogadorDTO {
     private Long id;
     private String nickname;
     private String password;
     private BigDecimal saldo;
+    private List<Stefamon> stefamon = new ArrayList<>( );
 
     public JogadorDTO() {
     }
